@@ -1,6 +1,5 @@
 import Home from './pages/Home/Home'
 import { Route, Routes } from 'react-router-dom'
-import Toaster from 'react-hot-toast'
 
 function App() {
 
@@ -9,7 +8,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-      <Toaster reverseOrder={false}/>
     </>
   )
 }

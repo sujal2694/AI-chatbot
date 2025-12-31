@@ -17,6 +17,18 @@ const ContextProvider = (props) => {
     const url = "http://localhost:4000"
     const [token, setToken] = useState("");
 
+    const fetchUser = () => {
+        const token1 = localStorage.getItem("token");
+        if (token1) {
+            setToken(token1)
+            console.log(token1);
+        }
+    }
+
+    useEffect(()=>{
+        fetchUser();
+    },[])
+
     const responseMessage = (response) => {
         const user = jwtDecode(response.credential)
         setUser(user);

@@ -7,3 +7,12 @@ body{
     color: white;
     box-sizing: border-box;
 }
+
+.profile-bar{
+    display: none;
+}
+
+.profile-entry:hover .profile-bar{
+    display: block;
+    background-color: #303030;
+}
