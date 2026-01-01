@@ -5,7 +5,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast';
 
 const LoginPage = () => {
-    const { currState, setCurrState, setOpenLogin, openLogin, data, setData, responseMessage, errorMessage, url, setToken } = useContext(Context);
+    const { currState, setCurrState, setOpenLogin, openLogin, data, setData, url, setToken } = useContext(Context);
 
     const onChangeHandler = (event) => {
         const name = event.target.name;
@@ -16,7 +16,7 @@ const LoginPage = () => {
     const onLogin = async (event) => {
         event.preventDefault();
         let newUrl = url;
-        if (currState==="Sign Up") {
+        if (currState === "Sign Up") {
             newUrl += "/api/user/registerUser"
             toast.success("Registered successfully")
         } else {
@@ -57,17 +57,17 @@ const LoginPage = () => {
 
                                 <div className='w-[95%]'>
                                     <p className='text-sm pl-3 mb-1 text-gray-200'>Email</p>
-                                    <input className='w-full h-10 bg-transparent border border-gray-500 rounded-lg text-gray-200 pl-3 outline-none focus:border-blue-500 focus:border-2 transition-all duration-100' name='email' value={data.email} onChange={onChangeHandler} placeholder='Type here' type="email" required/>
+                                    <input className='w-full h-10 bg-transparent border border-gray-500 rounded-lg text-gray-200 pl-3 outline-none focus:border-blue-500 focus:border-2 transition-all duration-100' name='email' value={data.email} onChange={onChangeHandler} placeholder='Type here' type="email" required />
                                 </div>
 
                                 <div className='w-[95%]'>
                                     <p className='text-sm pl-3 mb-1 text-gray-200'>Password</p>
-                                    <input className='w-full h-10 bg-transparent border border-gray-500 rounded-lg text-gray-200 pl-3 outline-none focus:border-blue-500 focus:border-2 transition-all duration-100' name='password' value={data.password} onChange={onChangeHandler} placeholder='Type here' type="password" required/>
+                                    <input className='w-full h-10 bg-transparent border border-gray-500 rounded-lg text-gray-200 pl-3 outline-none focus:border-blue-500 focus:border-2 transition-all duration-100' name='password' value={data.password} onChange={onChangeHandler} placeholder='Type here' type="password" required />
                                 </div>
                             </div>
 
                             <div className='flex items-center gap-2 pl-4'>
-                                <input className='accent-gray-600 border-none' type="checkbox" required/>
+                                <input className='accent-gray-600 border-none' type="checkbox" required />
                                 <p className='font-semibold text-sm text-slate-300'>Accept Terms & Conditions.</p>
                             </div>
 
@@ -77,10 +77,6 @@ const LoginPage = () => {
                         {currState === "Sign Up"
                             ? <p className='w-full text-center text-sm '>If you have an account? <span onClick={() => setCurrState("Sign In")} className='underline hover:text-zinc-400 cursor-pointer'>Sign In</span></p>
                             : <p className='w-full text-center text-sm '>If you don't have an account? <span onClick={() => setCurrState("Sign Up")} className='underline hover:text-zinc-400 cursor-pointer'>Sign Up</span></p>}
-
-                        <hr className='h-[1px] border-none bg-white rounded-full my-3' />
-                        <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
-                        
                     </div>
                 </div>
                 : ""

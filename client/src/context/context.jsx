@@ -13,7 +13,6 @@ const ContextProvider = (props) => {
         email: "",
         image: "",
     });
-    const [user, setUser] = useState("");
     const url = "http://localhost:4000"
     const [token, setToken] = useState("");
 
@@ -25,18 +24,14 @@ const ContextProvider = (props) => {
         }
     }
 
+    const logout = () => {
+        localStorage.removeItem("token");
+        setToken("");
+    }
+
     useEffect(()=>{
         fetchUser();
     },[])
-
-    const responseMessage = (response) => {
-        const user = jwtDecode(response.credential)
-        setUser(user);
-    }
-
-    const errorMessage = (error) => {
-        console.log(error);
-    }
 
     const contextValue = {
         currState,
@@ -45,12 +40,10 @@ const ContextProvider = (props) => {
         setOpenLogin,
         data,
         setData,
-        errorMessage,
-        responseMessage,
-        user,
         url,
         token,
         setToken,
+        logout,
     }
 
 
