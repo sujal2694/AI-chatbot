@@ -4,7 +4,7 @@ import PromptPage from '../../components/PromptPage'
 
 const Content = () => {
   return (
-    <div>
+    <div className=' w-screen flex items-start'>
       <Slider/>
       <PromptPage/>
     </div>

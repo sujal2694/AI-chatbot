@@ -37,7 +37,7 @@ const LoginPage = () => {
         <>
             {openLogin
                 ? <div className='h-screen w-full absolute top-0 left-0 flex items-center justify-center bg-zinc-800/40'>
-                    <div className='w-[40vw] lg:w-[25vw] bg-gray-600/50 rounded-xl p-6'>
+                    <div className='w-[40vw] lg:w-[25vw] bg-gray-600/90 rounded-xl p-6'>
 
                         <div className='w-full flex items-center justify-between mb-4'>
                             <h1 className='text-3xl uppercase font-semibold'>{currState}</h1>
@@ -71,7 +71,7 @@ const LoginPage = () => {
                                 <p className='font-semibold text-sm text-slate-300'>Accept Terms & Conditions.</p>
                             </div>
 
-                            <button type='submit' className='w-full my-5 bg-gradient-to-r from-gray-600 via-slate-600 to-zinc-600 py-2 rounded-lg cursor-pointer'>{currState}</button>
+                            <button type='submit' className='w-full my-5 bg-gradient-to-r from-gray-700 via-slate-700 to-zinc-700 py-2 rounded-lg cursor-pointer'>{currState}</button>
                         </form>
 
                         {currState === "Sign Up"

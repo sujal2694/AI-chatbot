@@ -16,12 +16,13 @@ const ContextProvider = (props) => {
     const url = "http://localhost:4000"
     const [token, setToken] = useState("");
     const [input, setInput] = useState("");
+    const [slide, setSlide] = useState(false);
+
 
     const fetchUser = () => {
         const token1 = localStorage.getItem("token");
         if (token1) {
             setToken(token1)
-            console.log(token1);
         }
     }
 
@@ -30,9 +31,9 @@ const ContextProvider = (props) => {
         setToken("");
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchUser();
-    },[])
+    }, [])
 
     const contextValue = {
         currState,
@@ -47,6 +48,8 @@ const ContextProvider = (props) => {
         logout,
         input,
         setInput,
+        slide,
+        setSlide,
     }
 
 
