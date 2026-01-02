@@ -15,6 +15,7 @@ const ContextProvider = (props) => {
     });
     const url = "http://localhost:4000"
     const [token, setToken] = useState("");
+    const [input, setInput] = useState("");
 
     const fetchUser = () => {
         const token1 = localStorage.getItem("token");
@@ -44,6 +45,8 @@ const ContextProvider = (props) => {
         token,
         setToken,
         logout,
+        input,
+        setInput,
     }
 
 
