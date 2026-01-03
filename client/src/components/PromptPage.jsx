@@ -10,13 +10,14 @@ const PromptPage = () => {
         setInput(input => ({ ...input, [name]: value }));
     }
 
+    
 
     return (
         <div className='relative h-screen w-full flex items-center justify-center'>
             <div onClick={() => setSlide(!slide)} className={slide ? "hidden" : 'absolute top-5 left-5 rounded-full h-10 w-10 hover:bg-gray-500/30 flex items-center justify-center cursor-pointer transition-all duration-500'}>
                 <i className='bx bx-menu text-xl'></i>
             </div>
-            <div className='w-[70vw] lg:w-[40vw] bg-gray-500/50 rounded-2xl border border-zinc-300'>
+            <div className='w-[70vw] lg:w-[40vw] bg-gray-700/30 rounded-2xl border border-zinc-300'>
                 <div className='w-full px-3'>
                     <div>
                         <input type="text" className='text-white placeholder:text-gray-400 h-12 w-full mb-2 rounded-2xl bg-transparent border-none outline-none pl-3 accent-blue-600' placeholder='Ask anything. Type @ for mentions and / for shortcuts.' onChange={onChangeHndler} />

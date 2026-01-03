@@ -1,5 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 import { createContext, useEffect, useState } from "react";
+import main from "../config/api";
 
 
 export const Context = createContext(null);
@@ -33,6 +34,7 @@ const ContextProvider = (props) => {
 
     useEffect(() => {
         fetchUser();
+        main();
     }, [])
 
     const contextValue = {
